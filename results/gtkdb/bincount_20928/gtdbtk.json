@@ -1,0 +1,129 @@
+{
+    "version": "2.4.1",
+    "command_line": "gtdbtk classify_wf --genome_dir /scratch/jstajich/18885135/2025_08_06_07_11 --out_dir results/gtkdb/bincount_20928 -x fa --prefix gtdbtk --cpus 48 --pplacer_cpus 8 --tmpdir /scratch/jstajich/18885135 --mash_db /scratch/jstajich/18885135/mashdb.msh",
+    "database_version": "r226",
+    "database_path": "226",
+    "steps": [
+        {
+            "name": "ANI screen",
+            "output_dir": "results/gtkdb/bincount_20928",
+            "starts_at": "2025-08-06T07:12:32.681623",
+            "ends_at": "2025-08-06T09:51:33.160721",
+            "duration": "2:39:00",
+            "status": "completed",
+            "genome_dir": "/scratch/jstajich/18885135/2025_08_06_07_11",
+            "batchfile": null,
+            "mash_k": 16,
+            "mash_s": 5000,
+            "mash_v": 1.0,
+            "mash_max_dist": 0.15,
+            "min_af": 0.5,
+            "mash_db": "/scratch/jstajich/18885135/mashdb.msh",
+            "output_files": {
+                "bac120": "results/gtkdb/bincount_20928/classify/ani_screen/gtdbtk.bac120.ani_summary.tsv",
+                "ar53": "results/gtkdb/bincount_20928/classify/ani_screen/gtdbtk.ar53.ani_summary.tsv"
+            }
+        },
+        {
+            "name": "identify",
+            "output_dir": "results/gtkdb/bincount_20928",
+            "starts_at": "2025-08-06T09:51:33.231317",
+            "ends_at": "2025-08-06T12:22:47.836238",
+            "duration": "2:31:14",
+            "status": "completed",
+            "genes": false,
+            "extension": "fa",
+            "write_single_copy_genes": false,
+            "genome_dir": "/scratch/jstajich/18885135/2025_08_06_07_11",
+            "batchfile": null,
+            "output_files": {
+                "all": [
+                    "results/gtkdb/bincount_20928/identify/gtdbtk.failed_genomes.tsv",
+                    "results/gtkdb/bincount_20928/identify/gtdbtk.translation_table_summary.tsv"
+                ],
+                "ar53": [
+                    "results/gtkdb/bincount_20928/identify/gtdbtk.ar53.markers_summary.tsv"
+                ],
+                "bac120": [
+                    "results/gtkdb/bincount_20928/identify/gtdbtk.bac120.markers_summary.tsv"
+                ]
+            }
+        },
+        {
+            "name": "align",
+            "output_dir": "results/gtkdb/bincount_20928",
+            "starts_at": "2025-08-06T12:22:47.837532",
+            "ends_at": "2025-08-06T12:31:17.834040",
+            "duration": "0:08:29",
+            "status": "completed",
+            "identify_dir": "results/gtkdb/bincount_20928",
+            "skip_gtdb_refs": false,
+            "taxa_filter": null,
+            "min_perc_aa": 10,
+            "custom_msa_filters": false,
+            "skip_trimming": false,
+            "rnd_seed": null,
+            "cols_per_gene": null,
+            "min_consensus": null,
+            "max_consensus": null,
+            "min_perc_taxa": null,
+            "outgroup_taxon": null,
+            "output_files": {
+                "bac120": [
+                    "results/gtkdb/bincount_20928/align/gtdbtk.bac120.filtered.tsv",
+                    "results/gtkdb/bincount_20928/align/gtdbtk.bac120.msa.fasta",
+                    "results/gtkdb/bincount_20928/align/gtdbtk.bac120.user_msa.fasta"
+                ],
+                "ar53": [
+                    "results/gtkdb/bincount_20928/align/gtdbtk.ar53.filtered.tsv",
+                    "results/gtkdb/bincount_20928/align/gtdbtk.ar53.msa.fasta",
+                    "results/gtkdb/bincount_20928/align/gtdbtk.ar53.user_msa.fasta"
+                ],
+                "all": [
+                    "results/gtkdb/bincount_20928/align/intermediate_results/gtdbtk.align.failed.tsv"
+                ]
+            }
+        },
+        {
+            "name": "classify",
+            "output_dir": "results/gtkdb/bincount_20928",
+            "starts_at": "2025-08-06T12:31:17.834523",
+            "ends_at": "2025-08-06T19:36:17.369170",
+            "duration": "7:04:59",
+            "status": "completed",
+            "align_dir": "results/gtkdb/bincount_20928",
+            "genome_dir": "/scratch/jstajich/18885135/2025_08_06_07_11",
+            "batchfile": null,
+            "scratch_dir": null,
+            "debug_option": false,
+            "full_tree": false,
+            "skip_ani_screen": true,
+            "no_mash": false,
+            "mash_k": 16,
+            "mash_v": 1.0,
+            "mash_s": 5000,
+            "mash_db": "/scratch/jstajich/18885135/mashdb.msh",
+            "mash_max_dist": 0.15,
+            "output_files": {
+                "ar53": [
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.ar53.summary.tsv"
+                ],
+                "bac120": [
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.backbone.bac120.classify.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.4.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.2.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.6.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.3.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.1.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.5.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.7.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.classify.tree.8.tree",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.tree.mapping.tsv",
+                    "results/gtkdb/bincount_20928/classify/gtdbtk.bac120.summary.tsv"
+                ]
+            }
+        }
+    ],
+    "output_dir": "results/gtkdb/bincount_20928",
+    "path": "results/gtkdb/bincount_20928/gtdbtk.json"
+}
